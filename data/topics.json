@@ -1,0 +1,17 @@
+[
+  {
+    "id": "t1",
+    "name": "Web Development Fundamentals",
+    "description": "Kernkonzepte für die Entwicklung von Webanwendungen, einschließlich HTML, CSS und JavaScript."
+  },
+  {
+    "id": "t2",
+    "name": "Frontend Development",
+    "description": "Fokus auf die Benutzeroberfläche und Interaktion, wie React, Vue oder Angular."
+  },
+  {
+    "id": "t3",
+    "name": "Backend Development",
+    "description": "Server-seitige Logik, Datenbanken und APIs, z.B. mit Python Flask oder Node.js Express."
+  }
+]
