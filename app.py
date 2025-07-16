@@ -24,15 +24,16 @@ def read_json_file(filepath):
         print(f"Fehler beim Dekodieren der JSON-Datei: {filepath}. Bitte JSON-Syntax überprüfen!")
         return[]
     except Exception as e:
-        print(f"Ein unerwarteter Fehler ist beim lesen von: {filepath}: {e} aufgetreten!")
+        print(f"Ein unerwarteter Fehler ist beim Lesen von: {filepath}: {e} aufgetreten!")
         return[]
     
-    @app.route('/topics', method='GET')
+  
+  
+    @app.route('/topics', methods=['GET'])
     def get_topics():
         topics = read_json_file(TOPICS_FILE)
         return jsonify (topics)
     
-
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
