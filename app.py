@@ -13,7 +13,6 @@ TOPICS_FILE = os.path.join(DATA_DIR, 'topics.json')
 def hello_world():
     return 'Hello from Topic and Skill Service! How are you today?'
 
-@app.route('/topics')
 def read_json_file(filepath):
     if not os.path.exists(filepath):
         return []
