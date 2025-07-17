@@ -1,0 +1,10 @@
+[
+{ "id": "s1", "name": "HTML Basics", "topicId": "t1",
+"difficulty": "beginner" },
+{ "id": "s2", "name": "CSS Layouts (Flexbox∕Grid)",
+"topicId": "t1", "difficulty": "intermediate" },
+{ "id": "s3", "name": "React Hooks", "topicId": "t2",
+"difficulty": "advanced", "prerequisites": ["s4"] },
+{ "id": "s4", "name": "JavaScript ES6+", "topicId": "t1",
+"difficulty": "intermediate" }
+]
