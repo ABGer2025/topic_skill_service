@@ -1,17 +1,22 @@
 [
-  {
-    "id": "t1",
-    "name": "Web Development Fundamentals",
-    "description": "Kernkonzepte für die Entwicklung von Webanwendungen, einschließlich HTML, CSS und JavaScript."
-  },
-  {
-    "id": "t2",
-    "name": "Frontend Development",
-    "description": "Fokus auf die Benutzeroberfläche und Interaktion, wie React, Vue oder Angular."
-  },
-  {
-    "id": "t3",
-    "name": "Backend Development",
-    "description": "Server-seitige Logik, Datenbanken und APIs, z.B. mit Python Flask oder Node.js Express."
-  }
+    {
+        "id": "t1",
+        "name": "Web Development Fundamentals",
+        "description": "Kernkonzepte f\u00fcr die Entwicklung von Webanwendungen, einschlie\u00dflich HTML, CSS und JavaScript."
+    },
+    {
+        "id": "t2",
+        "name": "Frontend Development",
+        "description": "Fokus auf die Benutzeroberfl\u00e4che und Interaktion, wie React, Vue oder Angular."
+    },
+    {
+        "id": "t3",
+        "name": "Backend Development",
+        "description": "Server-seitige Logik, Datenbanken und APIs, z.B. mit Python Flask oder Node.js Express."
+    },
+    {
+        "id": "f8bf467b-9488-4365-9e1e-d168c308adf5",
+        "name": "Grundlagen der K\u00fcnstlichen Intelligenz",
+        "description": "Eine Einf\u00fchrung in die Konzepte und Anwendungen von KI, einschlie\u00dflich maschinellem Lernen und neuronalen Netzen."
+    }
 ]
