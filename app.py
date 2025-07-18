@@ -93,7 +93,32 @@ def create_skill():
     data_manager.write_data(SKILLS_FILE, skill)
 
     return jsonify(skill), 201
-                   
+
+
+@app.route('/topics/<id>', methods=['PUT'])
+def update_topic(id):
+    updated_data = request.json
+
+    if not updated_data or 'name' not in updated_data or 'description' not in updated_data:
+        return jsonify({"error": "Name und Beschreibung für das Topic sind erforderlich"}), 400
+
+    topics = data_manager.read_data(TOPICS_FILE)
+
+    found_index = -1
+    for i, t in enumerate(topics):
+        if t['id'] == id:
+            found_index = i
+            break
+
+    if found_index == -1:
+        return jsonify({"error": "Topic not found"}), 404
+
+    topics[found_index]['name'] = updated_data['name']
+    topics[found_index]['description'] = updated_data['description']
+  
+    data_manager.write_data(TOPICS_FILE, topics)
+
+    return jsonify(topics[found_index]), 200      
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
