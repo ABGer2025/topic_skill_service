@@ -166,5 +166,25 @@ def delete_topic(id):
 
     return '', 204
 
+
+@app.route('/skills/<id>', methods=['DELETE'])
+def delete_skill(id):
+    skills = data_manager.read_data(SKILLS_FILE)
+
+    found_index = -1
+    for i, s in enumerate(skills):
+        if s['id'] == id:
+            found_index = i
+            break
+
+    if found_index == -1:
+        return jsonify({"error": "Skill not found"}), 404
+
+    skills.pop(found_index)
+    data_manager.write_data(SKILLS_FILE, skills)
+
+    return '', 204
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

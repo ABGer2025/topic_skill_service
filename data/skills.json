@@ -1,11 +1,5 @@
 [
     {
-        "id": "s1",
-        "name": "HTML Basics",
-        "topicId": "t1",
-        "difficulty": "beginner"
-    },
-    {
         "id": "s2",
         "name": "CSS Layouts (Flexbox/Grid)",
         "topicId": "t1",
