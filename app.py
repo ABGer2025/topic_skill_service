@@ -118,7 +118,34 @@ def update_topic(id):
   
     data_manager.write_data(TOPICS_FILE, topics)
 
-    return jsonify(topics[found_index]), 200      
+    return jsonify(topics[found_index]), 200  
+
+
+@app.route('/skills/<id>', methods=['PUT'])
+def update_skill(id):
+    updated_data = request.json
+
+    if not updated_data or 'name' not in updated_data or 'topicId' not in updated_data:
+        return jsonify({"error": "Name und Topic ID für den Skill sind erforderlich"}), 400
+
+    skills = data_manager.read_data(SKILLS_FILE)
+
+    found_index = -1
+    for i, s in enumerate(skills):
+        if s['id'] == id:
+            found_index = i
+            break
+
+    if found_index == -1:
+        return jsonify({"error": "Skill not found"}), 404
+
+    skills[found_index]['name'] = updated_data['name']
+    skills[found_index]['topicId'] = updated_data['topicId']
+    skills[found_index]['difficulty'] = updated_data.get('difficulty', skills[found_index].get('difficulty', 'unknown'))
+ 
+    data_manager.write_data(SKILLS_FILE, skills)
+
+    return jsonify(skills[found_index]), 200
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
