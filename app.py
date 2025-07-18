@@ -30,7 +30,8 @@ def get_skills():
 @app.route('/topics/<id>', methods=['GET'])
 def get_topic_by_id(id):
     topics = data_manager.read_data(TOPICS_FILE)
-    topic = (t for t in topics if t['id'] == id)
+    found_topics = [t for t in topics if t['id'] == id]
+    topic = found_topics[0] if found_topics else None 
     return jsonify(topic)
                    
 
