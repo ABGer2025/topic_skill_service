@@ -147,5 +147,24 @@ def update_skill(id):
 
     return jsonify(skills[found_index]), 200
 
+@app.route('/topics/<id>', methods=['DELETE'])
+def delete_topic(id):
+    topics = data_manager.read_data(TOPICS_FILE)
+
+    found_index = -1
+    for i, t in enumerate(topics):
+        if t['id'] == id:
+            found_index = i
+            break
+
+    if found_index == -1:
+        return jsonify({"error": "Topic not found"}), 404
+
+    deleted_topic = topics.pop(found_index)
+
+    data_manager.write_data(TOPICS_FILE, topics)
+
+    return '', 204
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
